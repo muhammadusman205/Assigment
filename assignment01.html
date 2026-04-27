@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Assignment 01 – Semantic HTML Foundations</title>
+
+  <style>
+    /* Minimal styling allowed in Lab 01 (color + font only) */
+    body { font-family: Arial, sans-serif; }
+    .rule-box { background-color: #fff3cd; }
+    .note-box { background-color: #e7f3ff; }
+    .warning  { color: #7a1f1f; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lab Practice &amp; Assignment 01</h1>
+    <p>
+      Semantic HTML foundations using Norman, GOMS, and KLM
+      (<strong>Dix et al., Human–Computer Interaction</strong>, Ch. 12, p. 437: KLM/GOMS operators; plus Ch. 9: evaluation techniques)
+    </p>
+  </header>
+
+<section class="note-box">
+  <h2>Official Starter Code &amp; Live Demo</h2>
+  <p>
+    <strong>Starter Code (GitHub Repository):</strong><br>
+    <a href="https://github.com/humeraaa/hci-cg-2026">
+      https://github.com/humeraaa/hci-cg-2026
+    </a>
+  </p>
+  <p>
+    <strong>Live Demo (GitHub Pages):</strong><br>
+    <a href="https://humeraaa.github.io/hci-cg-2026/">
+      https://humeraaa.github.io/hci-cg-2026/
+    </a>
+  </p>
+  <p>
+    <em>This page is the single source of truth for Lab &amp; Assignment 01.</em>
+  </p>
+</section>
+
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="analysis.html">Interaction Analysis</a></li>
+      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+      <li><a href="assignment01.html" aria-current="page">Lab 01 Rules</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section>
+      <h2>Purpose</h2>
+      <p>
+        The purpose of Lab &amp; Assignment 01 is to bring all students to the same baseline level of
+        <strong>semantic HTML</strong> skill with <strong>minimal CSS</strong> and <strong>no JavaScript</strong>.
+        Your work should clearly communicate the differences between Norman’s model, GOMS, and KLM.
+      </p>
+    </section>
+
+    <section class="rule-box">
+      <h2>Starter Project</h2>
+      <p>
+        You will receive a starter website repository (5 pages). Your task is to improve the HTML
+        structure, clarity, and accessibility while keeping within the rules below.
+      </p>
+      <ul>
+        <li><code>index.html</code> (Home)</li>
+        <li><code>cv.html</code> (Conceptual CV / structured content page)</li>
+        <li><code>contact.html</code> (Contact form)</li>
+        <li><code>analysis.html</code> (Norman vs. GOMS comparison table)</li>
+        <li><code>norman2klm.html</code> (Norman vs. GOMS vs. KLM + operators)</li>
+      </ul>
+      <p>
+        You may add content related to our Week 01–Week 04 discussion (e.g., Toggle Switch, Automatic Syringe, Who Paid Problem),
+        but all work must remain within Lab 01 scope and the Norman/GOMS/KLM comparison theme.
+      </p>
+    </section>
+
+    <section>
+      <h2>Content Scope (Strict)</h2>
+      <p>Use only content related to:</p>
+      <ul>
+        <li>Norman’s Action Cycle (and gulfs of execution/evaluation)</li>
+        <li>GOMS (goals, operators, methods, selection rules)</li>
+        <li>KLM (operators and execution-time prediction)</li>
+      </ul>
+
+      <p class="note-box">
+        <strong>Source restriction:</strong> Use selective and relevant content from
+        <strong>Dix et al., Human–Computer Interaction</strong> (Ch. 9 and Ch. 12). You may add hand-designed
+        UI sketches/layouts for interaction analysis, but do not introduce unrelated topics or external sources.
+      </p>
+    </section>
+
+    <section>
+      <h2>HTML Requirements (Tabular)</h2>
+
+      <table border="1">
+        <caption>
+          HTML Requirements for Lab &amp; Assignment 01 (Semantic Structure, IA, and Accessibility Basics)
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Requirement Area</th>
+            <th scope="col">HTML Element(s)</th>
+            <th scope="col">Rule (What to Do)</th>
+            <th scope="col">Purpose (Why)</th>
+            <th scope="col">Common Mistakes to Avoid</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Semantic Structure</th>
+            <td>
+              header, nav, main,<br>
+              section, article, footer
+            </td>
+            <td>
+              Use semantic elements according to their meaning:
+              <code>header</code> for page header, <code>nav</code> for navigation,
+              <code>main</code> for main content, <code>section</code> for thematic grouping,
+              <code>article</code> for self-contained content, <code>footer</code> for footer.
+            </td>
+            <td>
+              Improves clarity, maintainability, and screen-reader navigation.
+            </td>
+            <td>
+              Using only <code>div</code>; using <code>nav</code> for non-navigation content.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Navigation Structure</th>
+            <td>
+              nav, ul (unordered list),<br>
+              li (list item), a (anchor/link)
+            </td>
+            <td>
+              Navigation must be structured as a list:
+              <code>nav</code> contains a <code>ul</code>,
+              the <code>ul</code> contains <code>li</code>,
+              and each <code>li</code> contains an <code>a</code> link.
+            </td>
+            <td>
+              Screen readers expect menus as a list of destinations.
+            </td>
+            <td>
+              Placing <code>a</code> directly inside <code>ul</code> (missing <code>li</code>);
+              inconsistent navigation across pages.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Headings</th>
+            <td>h1, h2, h3, h4</td>
+            <td>
+              Use exactly one <code>h1</code> per page.
+              Use <code>h2</code>, <code>h3</code>, etc. for subsections without skipping levels.
+            </td>
+            <td>
+              Provides a clear content hierarchy and supports assistive navigation.
+            </td>
+            <td>
+              Multiple <code>h1</code> elements; skipping from <code>h1</code> to <code>h3</code>.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Tables (Comparisons)</th>
+            <td>
+              table, caption, thead,<br>
+              tbody, th, td
+            </td>
+            <td>
+              Use tables only for comparison/tabular data.
+              Include <code>caption</code>, <code>thead</code>, <code>tbody</code>,
+              and use <code>th</code> with correct <code>scope</code>.
+            </td>
+            <td>
+              Makes comparisons readable and accessible to screen readers.
+            </td>
+            <td>
+              Using tables for layout; missing <code>caption</code>;
+              using only <code>td</code> with no headers.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Links</th>
+            <td>a (anchor/link)</td>
+            <td>
+              Use descriptive link text that clearly indicates the destination
+              (avoid generic text like “click here”).
+            </td>
+            <td>
+              Links should make sense when read alone (e.g., by a screen reader).
+            </td>
+            <td>
+              “Click here”, “Read more”, or vague links that do not describe the destination.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Images</th>
+            <td>img, alt</td>
+            <td>
+              Every <code>img</code> must have an <code>alt</code> attribute.
+              Use meaningful alt text for informative images;
+              use <code>alt=""</code> for decorative images.
+            </td>
+            <td>
+              Provides accessible alternatives and fallback when images fail to load.
+            </td>
+            <td>
+              Missing <code>alt</code>; using file names like “norman.jpg” as alt text.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Accessibility Requirements</h2>
+      <ul>
+        <li>Use <code>aria-current="page"</code> on the active navigation link (exactly one per page)</li>
+        <li>All form controls must have associated <code>&lt;label for="..."&gt;</code></li>
+        <li>Images must have appropriate <code>alt</code> text (or empty alt for purely decorative images)</li>
+        <li>The site must be keyboard usable (Tab to reach links and form controls)</li>
+      </ul>
+    </section>
+
+    <section class="rule-box">
+      <h2>CSS Rules (Strict: Minimal Only)</h2>
+      <p class="warning">You may use CSS only for the following properties:</p>
+      <ul>
+        <li><code>color</code></li>
+        <li><code>background-color</code></li>
+        <li><code>font-family</code></li>
+        <li><code>font-size</code></li>
+      </ul>
+
+      <p class="warning">Not allowed in Lab 01:</p>
+      <ul>
+        <li>
+          No layout or box model:
+          <code>margin</code>, <code>padding</code>, <code>border</code>, <code>width</code>, <code>height</code>,
+          <code>display</code>, <code>position</code>, <code>flex</code>, <code>grid</code>, etc.
+        </li>
+        <li>No animations, transitions, shadows</li>
+        <li>No CSS frameworks</li>
+        <li><strong>No JavaScript</strong></li>
+      </ul>
+
+      <p>
+        CSS can be included using <code>&lt;style&gt;</code> in the page <code>&lt;head&gt;</code>
+        (internal CSS) or inline styles, but keep it minimal.
+      </p>
+    </section>
+
+    <section>
+      <h2>Submission</h2>
+      <ul>
+        <li>Submit your work as a GitHub repository link</li>
+        <li>Repository should render correctly via GitHub Pages</li>
+        <li>Due: Week 05 (as announced in class)</li>
+      </ul>
+    </section>
+
+    <section class="note-box">
+      <h2>Lab Exam Practice (HTML Foundations)</h2>
+      <p>
+        These practice questions are within Lab 01 scope. They focus on semantic HTML, navigation structure,
+        accessibility basics, and tables.
+      </p>
+
+      <h3>Part A: Find Mistakes (Identify + Fix)</h3>
+      <p>
+        In the exam, you will (1) identify the mistake in one sentence and (2) write the corrected HTML.
+      </p>
+
+      <table border="1">
+        <caption>Sample exam questions: fix common HTML structure and accessibility mistakes</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">UI Element / Issue</th>
+            <th scope="col">Wrong HTML (with mistake)</th>
+            <th scope="col">Correct UI Element</th>
+            <th scope="col">Correct HTML</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Navigation menu has a link directly inside <code>ul</code> (missing <code>li</code>)</th>
+            <td>
+              <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+    &lt;li&gt;&lt;a href="cv.html"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Navigation list where each link is inside a list item</td>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html"&gt;CV&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Form label is not associated with its control (<code>for</code> ≠ <code>id</code>)</th>
+            <td>
+              <pre><code>&lt;label for="msg"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+            <td>Label correctly connected to form control</td>
+            <td>
+              <pre><code>&lt;label for="message"&gt;Message&lt;/label&gt;
+&lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Heading hierarchy is incorrect (skips a level)</th>
+            <td>
+              <pre><code>&lt;h1&gt;Interaction Analysis&lt;/h1&gt;
+&lt;h3&gt;Norman vs GOMS&lt;/h3&gt;</code></pre>
+            </td>
+            <td>Headings follow proper hierarchy (no skipping levels)</td>
+            <td>
+              <pre><code>&lt;h1&gt;Interaction Analysis&lt;/h1&gt;
+&lt;h2&gt;Norman vs GOMS&lt;/h2&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Comparison table missing <code>caption</code> and header cells (<code>th</code>)</th>
+            <td>
+              <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Model&lt;/td&gt;&lt;td&gt;Predicts&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;KLM&lt;/td&gt;&lt;td&gt;Time&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+            <td>Accessible table with caption + headers + scope</td>
+            <td>
+              <pre><code>&lt;table&gt;
+  &lt;caption&gt;Models and what they predict&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Model&lt;/th&gt;
+      &lt;th scope="col"&gt;Predicts&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th scope="row"&gt;KLM&lt;/th&gt;
+      &lt;td&gt;Execution time&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row"><code>aria-current</code> used incorrectly (more than one “current page”)</th>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+            <td>Only the active page link is marked as current</td>
+            <td>
+              <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="cv.html" aria-current="page"&gt;CV&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Part B: True / False</h3>
+      <ul>
+        <li><strong>T/F:</strong> Every link inside <code>&lt;ul&gt;</code> must be placed inside an <code>&lt;li&gt;</code>.</li>
+        <li><strong>T/F:</strong> A page may have multiple <code>&lt;h1&gt;</code> headings to make text larger.</li>
+        <li><strong>T/F:</strong> <code>aria-current="page"</code> should be used on the active navigation item.</li>
+        <li><strong>T/F:</strong> A form is accessible even if it has no <code>&lt;label&gt;</code> elements.</li>
+        <li><strong>T/F:</strong> KLM predicts execution time for expert, error-free performance.</li>
+      </ul>
+
+      <h3>Part C: Short Answer</h3>
+      <ul>
+        <li>Explain the difference between a semantic element (e.g., <code>nav</code>) and a generic element (e.g., <code>div</code>).</li>
+        <li>Why does KLM not model high-level planning and interpretation?</li>
+      </ul>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p><a href="index.html">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>

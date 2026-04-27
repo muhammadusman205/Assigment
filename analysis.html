@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding for consistent rendering -->
+  <meta charset="UTF-8">
+
+  <!-- Page title shown in browser tab and announced by screen readers -->
+  <title>Interaction Analysis – Norman vs. GOMS</title>
+
+  <style>
+    /* Minimal styling (Lab 01 allowed): highlight rows where Norman and GOMS directly correspond */
+    .norman-goms-match {
+      background-color: #fff3cd; /* warm, subtle amber */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page header: identifies topic and context -->
+  <header>
+    <h1>Interaction Analysis</h1>
+    <p>Norman (1988) vs. GOMS (1983): Enable Wi-Fi (iPhone 13 / Samsung S25)</p>
+  </header>
+
+  <!-- Primary navigation: consistent across all site pages -->
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+
+      <!-- Current page indicated for screen reader orientation -->
+      <li><a href="analysis.html" aria-current="page">Interaction Analysis</a></li>
+      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+      <li><a href="assignment01.html">Lab 01 Rules</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main landmark: unique content of this page -->
+  <main>
+
+    <section>
+      <h2>Norman vs. GOMS Comparison Table</h2>
+
+      <!-- Data table: caption + thead/tbody support accessibility -->
+      <table border="1">
+        <caption>
+          Comparison of Norman’s stages and GOMS concepts using the Wi-Fi toggle example
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Norman’s Stage</th>
+            <th scope="col">Real-World Example (iPhone 13 / Samsung S25)</th>
+            <th scope="col">GOMS Interpretation &amp; Rationale<br>GOMS 1983 vs. Norman’s 1988</th>
+            <th scope="col">Alignment Analysis</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Highlighted rows indicate direct Norman ↔ GOMS correspondence -->
+          <tr class="norman-goms-match">
+            <th scope="row">
+              Goal ↔ GOAL<br>
+              (User intention)
+            </th>
+            <td>
+              “I need Wi-Fi ON to access the internet.”
+            </td>
+            <td>
+              ✅ <strong>Goal:</strong> Enable-Wi-Fi.<br>
+              Top-level objective in GOMS.<br><br>
+              Both Goal and Methods are “intentions,” but at different levels of abstraction.
+            </td>
+            <td>
+              ✅ <strong>Perfect Match</strong><br>
+              Direct correspondence between models.
+            </td>
+          </tr>
+
+          <tr class="norman-goms-match">
+            <th scope="row">
+              Plan ↔ METHOD &amp; Selection Rules<br><br>
+              Mental state before action or High level of intention<br><br>
+              Cognitive decision state before execution
+            </th>
+            <td>
+              Decision (Cognitive Step):<br>
+              “I’ll use the quick toggle.”<br><br>
+
+              <strong>Note:</strong> GOMS typically models a single dominant method for simple, routine tasks.<br><br>
+
+              If multiple methods were modeled, Selection Rules would formally encode the choice logic that Norman lumps under “Planning.”<br><br>
+
+              User implicitly prefers quick toggle over Settings due to efficiency.
+            </td>
+            <td>
+              ✅ <strong>Method &amp; Selection Rules:</strong><br><br>
+
+              • iPhone: Swipe down → Control Center → Wi-Fi<br>
+              • Samsung: Swipe down → Quick Panel → Wi-Fi<br><br>
+
+              <strong>Selection Rule (optional):</strong>
+              If device is unlocked → use Quick-Toggle-Method.
+              Used only when multiple methods are explicitly modeled.
+            </td>
+            <td>
+              ✅ <strong>Conceptual Match</strong><br>
+              Both models represent high-level action planning.<br><br>
+
+              Norman’s “Plan” is realized as the GOMS “Method.” The choice aspect is implicit in GOMS for simple cases, explicit as Selection Rules for complex ones.<br><br>
+
+              🟡 <strong>Contextual Alignment</strong> — Handled implicitly in Norman; explicit but optional in GOMS.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Specify</th>
+            <td>
+              Visual search &amp; targeting:<br><br>
+              User locates (finds) the fan-shaped Wi-Fi icon among other toggles.<br><br>
+              Specification is about perception and meaning, not timing.
+            </td>
+            <td>
+              <strong>Not Explicitly Modeled.</strong><br><br>
+              GOMS assumes the correct UI object is already known. KLM may include mental preparation.<br><br>
+              KLM’s [M] operator ≠ Norman’s Specify.
+            </td>
+            <td>
+              <strong>Key Divergence</strong><br><br>
+              This is cognitive work Norman explains.<br><br>
+              GOMS abstracts this cognitive work away rather than modeling it explicitly,<br>
+              OR as part of a mental operator [M] in Execute/Operator.
+            </td>
+          </tr>
+
+          <tr class="norman-goms-match">
+            <th scope="row">Execute ↔ OPERATOR</th>
+            <td>
+              Physical Action: Finger taps the Wi-Fi toggle.<br>
+              • Touchscreen tap duration: ~0.2 seconds (KLM: [K] or [B]).
+            </td>
+            <td>
+              <strong>Operator:</strong> Tap (or click).<br>
+              This is a primitive, timed motor action.<br><br>
+
+              <strong>KLM Sequence:</strong> [M][P][K]<br>
+              • [M]: Mental prep to point (~1.35s)<br>
+              • [P]: Point to icon (~1.1s)<br>
+              • [K]: Keystroke/tap (~0.2s)
+            </td>
+            <td>
+              ✅ <strong>Direct Match</strong><br>
+              This is the empirical core both models acknowledge.
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">Perceive / Interpret / Evaluate</th>
+            <td>
+              Feedback Loop:<br>
+              1. Perceive: Toggle color changes (grey → blue).<br>
+              2. Interpret: “Blue = ON; connection active.”<br>
+              3. Evaluate: Wi-Fi icon appears in status bar; internet works.
+            </td>
+            <td>
+              <strong>Not Modeled in GOMS.</strong><br><br>
+              GOMS assumes perfect perception, instant interpretation, and automatic goal satisfaction.<br>
+              No time cost or cognitive stage is allocated.
+            </td>
+            <td>
+              <strong>Fundamental Divergence</strong><br><br>
+              This is the heart of Norman’s model (closing the Gulf of Evaluation) and is entirely outside GOMS’s scope.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section>
+      <h2>Quick Note</h2>
+      <p>
+        This page is included as a conceptual reference for Lab 01. Students should focus on writing clean,
+        semantic HTML and be able to explain how their structure supports usability and accessibility.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer: supplementary navigation -->
+  <footer>
+    <p><a href="index.html">Back to Home</a></p>
+  </footer>
+
+</body>
+</html>

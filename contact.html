@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding for consistent text rendering -->
+  <meta charset="UTF-8">
+
+  <!-- Page title shown in browser tab and announced by screen readers -->
+  <title>Don Norman – Contact</title>
+</head>
+<body>
+
+  <!-- Page header: identifies the page purpose -->
+  <header>
+    <h1>Contact</h1>
+  </header>
+
+  <!-- Primary navigation: identical structure across all pages -->
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cv.html">CV</a></li>
+
+      <!-- Current page is indicated using aria-current -->
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+
+      <li><a href="analysis.html">Interaction Analysis</a></li>
+      <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+      <li><a href="assignment01.html">Lab 01 Rules</a></li>
+
+    </ul>
+  </nav>
+
+  <!-- Main landmark: primary content of this page -->
+  <main>
+    <form action="#" method="post">
+      
+      <!-- Groups related form controls and provides context -->
+      <fieldset>
+        <legend>Send a Message</legend>
+
+        <!-- Label explicitly associated with its input -->
+        <label for="subject">Subject</label><br>
+        <input type="text" id="subject" name="subject"><br><br>
+
+        <!-- Textarea with clear label for screen readers -->
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea><br><br>
+
+        <!-- Submit button is keyboard accessible by default -->
+        <button type="submit">Send</button>
+      </fieldset>
+
+    </form>
+  </main>
+
+  <!-- Footer provides supplementary information -->
+  <footer>
+    <p>Keyboard accessible form with screen-reader friendly labels.</p>
+  </footer>
+
+</body>
+</html>
